@@ -9,6 +9,15 @@ RSpec.describe Comment do
     expect(comment).to be_valid
   end
 
+  it "broadcasts the comment" do
+    comment.save
+
+    expect(comment).to have_received(:broadcast_prepend_to).with(
+      "notifications_#{comment.reload.project.id}",
+      target: "project-conversation",
+      formats: [ :turbo_stream ]
+    )
+  end
 
   context "when content is blank" do
     let(:blank_content_comment) { build(:comment, content: "") }
