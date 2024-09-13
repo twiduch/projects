@@ -10,6 +10,9 @@ class ProjectsController < ApplicationController
     @comments = @project.comments.order(created_at: :desc)
   end
 
+  def status_change
+
+  end
 
   private
 

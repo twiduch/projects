@@ -2,8 +2,12 @@ Rails.application.routes.draw do
   root "public#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  resources :sessions, only: [ :create ]
   resources :dashboard, only: [ :index ]
-  resources :projects, only: [ :index ]
+  resources :projects, only: [ :index, :show ] do
+    post "status_change", on: :member
+  end
+  resources :comments, only: [ :create ]
 
   mount ActionCable.server => "/cable"
 
