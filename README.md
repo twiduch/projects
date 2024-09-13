@@ -44,23 +44,22 @@ http://localhost:3000
 To sign-in a user you need to choose one from selector in the top right corner
 
 ## Q&A
-
-Q: What fields should a comment have?
+**Q: What fields should a comment have?**  
 A: Comments should have fields for content.
 
-Q: How should comments be displayed?
+**Q: How should comments be displayed?**  
 A: Chronologically, with newest comments on top, including author and creation time.
 
-Q: Can comments be edited or deleted?
+**Q: Can comments be edited or deleted?**  
 A: Initially, comments can only be created; editing and deletion can be added later if needed.
 
-Q: Should the UI update in real time for comments or status changes when two users view the same project?
+**Q: Should the UI update in real time for comments or status changes when two users view the same project?**  
 A: Yes.
 
-Q: What statuses are available for a project?
-A: Planned, started, paused, review, completed, cancelled
+**Q: What statuses are available for a project?**  
+A: Planned, started, paused, review, completed, cancelled.
 
-Q: Who can leave comments and change the project status?
+**Q: Who can leave comments and change the project status?**  
 A: Users who are assigned to the project.
 
 ## App
