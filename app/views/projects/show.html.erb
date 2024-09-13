@@ -34,6 +34,8 @@
   </div>
 
   <div id="project-conversation" class="min-w-full">
-    <%= render partial: 'comments/comment', collection: @comments, formats: [:html]  %>
+    <% cache("project_comments_#{@project.id}_#{@comments.maximum(:updated_at)}") do %>
+      <%= render partial: 'comments/comment', collection: @comments, formats: [:html]  %>
+    <% end %>
   </div>
 </div>

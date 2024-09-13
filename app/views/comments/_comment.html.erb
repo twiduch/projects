@@ -1,17 +1,19 @@
-<div id="<%= dom_id comment %>"
-  class="block relative my-5 break-after-column p-6 border border-gray-200 rounded-lg shadow hover:bg-gray-100"
->
-  <p class="m-3 tracking-tight text-gray-900">
-    <strong class="text-bold font-medium">Author:</strong>
-     <%= comment.user.name %>
-  </p>
+<% cache(dom_id(comment)) do %>
+  <div id="<%= dom_id(comment) %>"
+    class="block relative my-5 break-after-column p-6 border border-gray-200 rounded-lg shadow hover:bg-gray-100"
+  >
+    <p class="m-3 tracking-tight text-gray-900">
+      <strong class="text-bold font-medium">Author:</strong>
+      <%= comment.user.name %>
+    </p>
 
-  <p class="m-3 tracking-tight text-gray-900">
-     <%= comment.content %>
-  </p>
+    <p class="m-3 tracking-tight text-gray-900">
+      <%= comment.content %>
+    </p>
 
-  <p class="m-3 tracking-tight text-gray-900">
-    <strong class="text-bold font-medium">Created:</strong>
-    <%= comment.created_at.strftime("%B %d, %Y at %I:%M %p") %>
-  </p>
-</div>
+    <p class="m-3 tracking-tight text-gray-900">
+      <strong class="text-bold font-medium">Created:</strong>
+      <%= comment.created_at.strftime("%B %d, %Y at %I:%M %p") %>
+    </p>
+  </div>
+<% end %>

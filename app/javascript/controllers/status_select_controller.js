@@ -28,8 +28,10 @@ export default class extends Controller {
   }
 
   updateValue(newValue) {
-    this.selectTarget.value = newValue
-    this.showStatusChange()
+    if (this.selectTarget.value !== newValue) {
+      this.selectTarget.value = newValue;
+      this.showStatusChange();
+    }
   }
 
   showStatusChange() {
