@@ -1,0 +1,16 @@
+
+  <div id="added_<%= dom_id comment %>"
+    class="fade-in"
+  >
+    <%= render partial: 'comments/comment', locals: { comment: comment }, formats: [:html]  %>
+  </div>
+  <script>
+    setTimeout(() => {
+      document.getElementById("added_<%= dom_id(comment) %>").classList.add('fade-in-enter');
+    }, 50);
+
+    Stimulus.
+      getControllerForElementAndIdentifier(document.getElementById('project_status'), 'status-select').
+      updateValue('<%= comment.project.status %>')
+  </script>
+

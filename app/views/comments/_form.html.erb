@@ -1,0 +1,11 @@
+<%= form_with(model: comment, class: "contents", id: 'comment-form') do |form| %>
+  <div class="my-5">
+    <%= form.text_area :content, rows: 2, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <%= hidden_field_tag :project_id, project_id %>
+
+  <div class="inline">
+    <%= form.submit "Add", class: "rounded-md py-1.5 px-3 bg-blue-600 text-white inline-block font-medium cursor-pointer text-sm" %>
+  </div>
+<% end %>

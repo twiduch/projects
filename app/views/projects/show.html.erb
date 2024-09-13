@@ -1,0 +1,39 @@
+<div data-project-id="<%= @project.id %>" class="flex-wrap w-full justify-center">
+  <span id="status-message" class="hidden absolute top-0 left-1/2 transform -translate-x-1/2 mt-4 p-2 bg-green-500 text-white rounded-lg shadow-lg">
+    Status changed
+  </span>
+  <div class="mx-auto w-1/3 justify-center">
+    <p class="m-3 tracking-tight text-gray-900">
+      <strong class="text-bold font-medium">Project Name:</strong>
+      <%= @project.name %>
+    </p>
+
+    <p class="flex items-center space-x-4 tracking-tight text-gray-900">
+      <strong class="text-bold font-medium mb-1">Status:</strong>
+      <%= select(:project, :status,  Project.statuses.to_a, { selected: @project.status },
+        class: 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+          focus:border-blue-500 block w-full p-2.5',
+        data: { controller: 'status-select', action: 'status-select#change', project_id: @project.id, status_select_target: 'select' }
+        )
+      %>
+    </p>
+
+    <div class="mx-auto my-4">
+      <%= link_to 'Back to projects', projects_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    </div>
+  </div>
+
+  <div class='mx-auto my-8 w-full block'>
+    <h2 class="font-bold text-xl">
+      Conversation
+    </h2>
+  </div>
+
+  <div class="mx-auto my-8 w-full block">
+    <%= render "comments/form", comment: Comment.new, project_id: @project.id %>
+  </div>
+
+  <div id="project-conversation" class="min-w-full">
+    <%= render partial: 'comments/comment', collection: @comments, formats: [:html]  %>
+  </div>
+</div>
