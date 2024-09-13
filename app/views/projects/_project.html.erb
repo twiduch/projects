@@ -1,0 +1,6 @@
+<%= link_to project_path(project), id: dom_id(project), class: "block relative md:w-80 my-5 break-after-column p-6 border border-gray-200 rounded-lg shadow hover:bg-gray-100", style: "text-decoration: none;" do %>
+  <p class="m-3 tracking-tight text-gray-900">
+    <strong class="text-bold font-medium">Name:</strong>
+    <%= project.name %>
+  </p>
+<% end %>

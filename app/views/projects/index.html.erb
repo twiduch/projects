@@ -1,0 +1,9 @@
+<div class="w-full">
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl"><%= current_user.name %>'s Projects</h1>
+  </div>
+
+  <div id="groups" class="mt-5 min-w-full md:grid md:grid-cols-2 md:justify-items-center">
+    <%= render @projects %>
+  </div>
+</div>
