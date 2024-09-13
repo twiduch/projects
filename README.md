@@ -43,6 +43,9 @@ http://localhost:3000
 
 To sign-in a user you need to choose one from selector in the top right corner
 
+<img width="304" alt="image" src="https://github.com/user-attachments/assets/74b29bf5-f596-4461-a62c-49e6687c6c08">
+
+
 ## Q&A
 **Q: What fields should a comment have?**  
 A: Comments should have fields for content.
@@ -68,13 +71,16 @@ The app enables users to create comments on projects.
 **Models:** `User` and `Project` are included primarily to demonstrate the commenting feature and may be extended in the future as needed.
 
 ### User capabilities:
-* reate comments directly on the project show page without navigating away
+* Create comments directly on the project show page without navigating away
 * Change the status of a project
 * View projects assigned to them
 
 ### Getting Started:
-1. After accessing the main page, select a user from the top-right corner of the nav bar and navigate to the Projects section.
-2. If no projects are visible, ensure the database is seeded by running:
+1. After accessing the main page, select a user from the top-right corner of the nav bar and navigate to the Projects section
+   
+ <img width="783" alt="image" src="https://github.com/user-attachments/assets/2c2e6003-4e01-43ae-a0c3-2f4a258175b4">
+  
+3. If no projects are visible, ensure the database is seeded by running:
     ```sh
     bin/db_setup
     ```
@@ -83,8 +89,14 @@ The app enables users to create comments on projects.
 - Select a specific project to view its details.
 - On the project page, you can add comments or change the project status using the provided selector.
 
+<img width="709" alt="image" src="https://github.com/user-attachments/assets/1282d738-2d6f-4dc0-a5b0-1a82e4277bfb">
+
+
 ### Real-Time Updates:
 - Open the same project page in a different browser and log in as a different user using the selector in the top-right corner. This will demonstrate real-time updates across sessions.
+
+<img width="1431" alt="image" src="https://github.com/user-attachments/assets/f21d8b44-d98c-450b-91f7-1126763819f5">
+
 
 ### Authentication
 Currently, there is no sign-up system implemented.
