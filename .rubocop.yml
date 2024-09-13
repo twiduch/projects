@@ -1,0 +1,53 @@
+# Omakase Ruby styling for Rails
+inherit_gem: { rubocop-rails-omakase: rubocop.yml }
+
+require:
+  - rubocop-rails
+  - rubocop-rspec
+AllCops:
+  NewCops: enable
+  DisplayCopNames: true
+  Exclude:
+    - 'tmp/**/*'
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'vendor/**/*'
+    - 'lib/tasks/**/*'
+    - '**/*.rake'
+    - 'config.ru'
+    - 'Gemfile'
+    - 'Rakefile'
+Layout/LineLength:
+  Max: 140
+Style/OpenStructUse:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Bundler/OrderedGems:
+  Enabled: false
+Metrics/BlockLength:
+  Max: 30
+  Exclude:
+    - 'spec/**/*'
+    - 'config/**/*'
+RSpec/ContextWording:
+  Enabled: false
+RSpec/AnyInstance:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: false
+RSpec/NestedGroups:
+  Max: 5
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+RSpec/ExampleLength:
+  Max: 10
+RSpec/LetSetup:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Rails/I18nLocaleTexts:
+  Enabled: false
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+  - "spec/**/*"

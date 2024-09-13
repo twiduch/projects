@@ -1,0 +1,34 @@
+
+version: "3.8"
+services:
+  db:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+     - POSTGRES_HOST_AUTH_METHOD=trust
+    volumes:
+      - db:/var/lib/postgresql/data
+    logging:
+      driver: none
+    ports:
+      - 5432:5432
+  web:
+    build: .
+    image: projects:latest
+    tty: true
+    stdin_open: true
+    environment:
+     DB_USERNAME: postgres
+     DB_PORT: 5432
+     DB_HOST: db
+     RAILS_ENV: development
+     RAILS_MAX_THREADS: 5
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+      - 9876:9876
+    depends_on:
+      - db
+volumes:
+  db:

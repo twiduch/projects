@@ -1,0 +1,2 @@
+#!/bin/bash
+docker compose run -it --rm --env RAILS_ENV=test web rspec ${1:-spec}
