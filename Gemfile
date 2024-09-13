@@ -19,7 +19,7 @@ gem "tailwindcss-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
-# gem "redis", ">= 4.0.1"
+gem "redis", ">= 4.0.1"
 
 gem "foreman"
 gem 'requestjs-rails'
@@ -35,6 +35,7 @@ group :development, :test do
   gem 'pry-remote'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'reek'
 end
 
 group :test do
