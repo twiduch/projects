@@ -11,11 +11,21 @@ class ProjectsController < ApplicationController
   end
 
   def status_change
+    status = params[:status]
 
+    if @project.update(status: status) && create_status_change_comment(status)
+        head :no_content
+    else
+      flash[:alert] = "Failed to update project status or create a comment."
+      head :internal_server_error
+    end
   end
 
   private
 
+  def create_status_change_comment(status)
+    CreateStatusChangeComment.new(project: @project, user: current_user, status: status).call
+  end
 
   def set_project
     @project = current_user.projects.find(params[:id])
