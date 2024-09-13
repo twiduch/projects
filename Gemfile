@@ -33,11 +33,11 @@ gem "bootsnap", require: false
 group :development, :test do
   gem 'pry'
   gem 'pry-remote'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :test do
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
   gem 'faker'
 end
 
