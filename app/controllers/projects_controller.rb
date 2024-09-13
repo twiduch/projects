@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: %i[show status_change]
 
   def index
-    @projects = current_user.projects
+    @projects = current_user.projects.order(created_at: :desc)
   end
 
   def show
