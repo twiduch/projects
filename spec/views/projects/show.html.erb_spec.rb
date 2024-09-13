@@ -8,7 +8,7 @@ RSpec.describe "projects/show.html.erb", type: :view do
 
   before do
     assign(:project, project)
-    assign(:comments, [comment1, comment2])
+    assign(:comments, [ comment1, comment2 ])
     allow(view).to receive(:current_user).and_return(user)
     render
   end

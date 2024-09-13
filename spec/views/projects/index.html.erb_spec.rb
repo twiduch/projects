@@ -4,7 +4,7 @@ RSpec.describe "projects/index.html.erb", type: :view do
   let(:project2) { create(:project, status: "completed") }
 
   before do
-    assign(:projects, [project1, project2])
+    assign(:projects, [ project1, project2 ])
     allow(view).to receive(:current_user).and_return(user)
     render
   end
